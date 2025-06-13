@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": "es:ESHttp*",
+      "Resource": "arn:aws:es:<region>:<accountId>:domain/<opensearch-domain-name>/*", 
+      "Condition": {
+        "IpAddress": {
+          "aws:SourceIp": "<yourIp>" 
+        }
+      }
+    }
+  ]
+}
